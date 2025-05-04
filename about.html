@@ -1,0 +1,264 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static 'images\pexels-photo-2705755.webp' %}');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+      <div class="col-md-9 ftco-animate pb-5">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+        <h1 class="mb-3 bread">About Us</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section with Card Design -->
+<section class="ftco-section ftco-about py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="card border-0 shadow-lg h-100">
+          <div class="card-img-top overflow-hidden" style="height: 400px;">
+            <img src="{% static 'images/man-woman-closing-deal.jpg' %}" class="img-fluid w-100 h-100 object-cover" alt="DriveEasy Team">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <div class="bg-light p-5 h-100">
+          <span class="subheading text-primary font-weight-bold">About Us</span>
+          <h2 class="mb-4 display-5">Welcome to DriveEasy</h2>
+          
+          <p class="lead">At DriveEasy, we make car rentals simple, convenient, and hassle-free. Whether you're planning a road trip, need a temporary ride, or want to explore a new city, we provide reliable vehicles at affordable rates.</p>
+          
+          <p>Our mission is to offer seamless mobility solutions, ensuring comfort, safety, and ease for every journey. With a wide range of vehicles and flexible rental options, DriveEasy is your go-to choice for all your travel needs.</p>
+          
+          <p class="mb-4">Experience the freedom of the road with us!</p>
+          
+          <div class="mt-4">
+            <a href="{% url 'services' %}" class="btn btn-primary btn-lg px-4">Our Services</a>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section with Cards -->
+<section class="ftco-counter ftco-section img py-5" id="section-counter">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="display-5 mb-4">Our Achievements</h2>
+        <p class="lead">DriveEasy in numbers - our journey of excellence and customer satisfaction</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card border-0 shadow-lg text-center h-100 py-4 px-3">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-calendar-alt fa-3x text-primary"></i>
+            </div>
+            <h3 class="counter display-4 font-weight-bold text-primary" data-number="60">0</h3>
+            <p class="lead">Years of Experience</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card border-0 shadow-lg text-center h-100 py-4 px-3">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-car fa-3x text-primary"></i>
+            </div>
+            <h3 class="counter display-4 font-weight-bold text-primary" data-number="1090">0</h3>
+            <p class="lead">Total Cars</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card border-0 shadow-lg text-center h-100 py-4 px-3">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-smile fa-3x text-primary"></i>
+            </div>
+            <h3 class="counter display-4 font-weight-bold text-primary" data-number="2590">0</h3>
+            <p class="lead">Happy Customers</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card border-0 shadow-lg text-center h-100 py-4 px-3">
+          <div class="card-body">
+            <div class="icon-box mb-3">
+              <i class="fas fa-map-marker-alt fa-3x text-primary"></i>
+            </div>
+            <h3 class="counter display-4 font-weight-bold text-primary" data-number="67">0</h3>
+            <p class="lead">Total Branches</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="ftco-section bg-light py-5">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="display-5 mb-4">What Our Customers Say</h2>
+        <p class="lead">Read testimonials from our satisfied customers</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-lg h-100">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-4">
+              <div class="rounded-circle overflow-hidden mr-3" style="width: 60px; height: 60px;">
+              
+              </div>
+              <div>
+                <h5 class="mb-0">John Smith</h5>
+                <small class="text-muted">Business Traveler</small>
+              </div>
+            </div>
+            <p class="mb-0">DriveEasy made my business trip so much easier. The car was clean, comfortable, and exactly what I needed. Will definitely use their services again!</p>
+            <div class="mt-3 text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-lg h-100">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-4">
+              <div class="rounded-circle overflow-hidden mr-3" style="width: 60px; height: 60px;">
+              
+              </div>
+              <div>
+                <h5 class="mb-0">Sarah Johnson</h5>
+                <small class="text-muted">Family Vacation</small>
+              </div>
+            </div>
+            <p class="mb-0">Our family trip was amazing thanks to DriveEasy. The SUV was perfect for our needs, and the customer service was exceptional. Highly recommended!</p>
+            <div class="mt-3 text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow-lg h-100">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-4">
+              <div class="rounded-circle overflow-hidden mr-3" style="width: 60px; height: 60px;">
+           
+              </div>
+              <div>
+                <h5 class="mb-0">Michael Wong</h5>
+                <small class="text-muted">Weekend Getaway</small>
+              </div>
+            </div>
+            <p class="mb-0">Quick booking, great prices, and excellent vehicle condition. DriveEasy made my weekend trip hassle-free and enjoyable. Will be my first choice for future rentals.</p>
+            <div class="mt-3 text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Add custom CSS -->
+<style>
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, rgba(0,123,255,0.7) 0%, rgba(0,0,0,0.7) 100%);
+  }
+  
+  .bg-gradient {
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  }
+  
+  .object-cover {
+    object-fit: cover;
+  }
+  
+  .counter {
+    font-size: 2.5rem;
+  }
+  
+  .icon-box {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    color: white;
+  }
+  
+  .hero-wrap {
+    position: relative;
+  }
+  
+  .hero-wrap .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+
+<!-- Add custom JavaScript for counter animation -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-number');
+        const count = +counter.innerText;
+        const inc = target / speed;
+        
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 1);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      
+      updateCount();
+    });
+  });
+</script>
+
+</body>
+</html>
+{% endblock %}

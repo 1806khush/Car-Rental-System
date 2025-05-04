@@ -1,0 +1,266 @@
+{% extends 'lheader.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  
+    <style>
+        /* Background gradient animation */
+        .bg-light.contact-form {
+            background: linear-gradient(120deg, #f8f9fa, #e9ecef, #dee2e6, #e9ecef, #f8f9fa);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .bg-light.contact-form:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+        }
+        
+        @keyframes gradient {
+            0% {background-position: 0% 50%}
+            50% {background-position: 100% 50%}
+            100% {background-position: 0% 50%}
+        }
+        
+        /* Form elements styling and effects */
+        .form-control {
+            transition: all 0.3s ease;
+            border: 1px solid #ced4da;
+        }
+        
+        .form-control:focus {
+            box-shadow: 0 0 15px rgba(0,123,255,0.2);
+            border-color: #80bdff;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero section parallax enhancement */
+        .hero-wrap-2 {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-wrap-2:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+        
+        .hero-wrap-2 .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Button animation */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .btn-primary:hover:before {
+            left: 100%;
+        }
+        
+        /* Checkbox styling */
+        input[type="checkbox"] {
+            accent-color: #007bff;
+            transform: scale(1.2);
+            margin-right: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        /* Alert message animation */
+        .alert {
+            animation: slideDown 0.5s ease forwards;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Form section background */
+        .ftco-section.contact-section {
+            background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+            position: relative;
+        }
+        
+        .ftco-section.contact-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="rgba(0,0,0,0.03)" fill-rule="evenodd"/></svg>');
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        /* Select elements styling */
+        select.form-control, select {
+            background-color: white;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right .75rem center;
+            background-size: 8px 10px;
+            padding: .375rem .75rem;
+            height: calc(1.5em + .75rem + 2px);
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            appearance: none;
+            -webkit-appearance: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        select.form-control:focus, select:focus {
+            box-shadow: 0 0 15px rgba(0,123,255,0.2);
+            border-color: #80bdff;
+        }
+    </style>
+    
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{% static 'images\pexels-photo-2705755.webp' %}');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
+          <div class="col-md-9 ftco-animate pb-5">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact <i class="ion-ios-arrow-forward"></i></span></p>
+            <h1 class="mb-3 bread">Add Cars</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% if msg %}
+    <div class="alert alert-danger" role="alert">
+      {{msg}}
+    </div>
+    {% endif %}
+
+    <section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info justify-content-center">
+          <div class="col-md-8 block-9 mb-md-5 d-flex justify-content-center">
+            <form method="post" action="{% url 'add' %}" class="bg-light p-5 contact-form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group">
+                <select name="stransmission">
+                  <option value="">-----Select Vehicle Type-----</option>
+                  <option value="Manual">Sedan</option>
+                  <option value="Automatic">Hatchback</option>
+                  <option value="EV">SUV</option>
+                  <option value="EV">Van</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="stransmission">
+                  <option value="">-----Select Transmission-----</option>
+                  <option value="Manual">Manual</option>
+                  <option value="Automatic">Automatic</option>
+                  <option value="EV">EV</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="sfuel">
+                  <option value="">-----Select Fuel-----</option>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="EV">EV</option>
+                  <option value="Hybrid">Hybrid</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Car Name" name="cname">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Mileage" name="mileage">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Seating Capacity" name="seats">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Luggage Capacity" name="luggage">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Price Per Hour" name="price_per_hour">
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Price Per Day" name="price_per_day">
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Price Per Month" name="price_per_month">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Fuel Surge Per Hour" name="hfuel">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Fuel Surge Per Day" name="dfuel">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" placeholder="Your Car Fuel Surge Per Month" name="mfuel">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Car Description" name="desc">
+              </div>
+              <div class="form-group checkbox-group">
+                <input type="checkbox" name="air">AirBag<br>
+                <input type="checkbox" name="gps">GPS<br>
+                <input type="checkbox" name="Child_Seat">Child Seat<br>
+                <input type="checkbox" name="Music">Music<br>
+                <input type="checkbox" name="Seat_Belt">Seat Belt<br>
+                <input type="checkbox" name="Sleeping_Bed">Sleeping Bed<br>
+                <input type="checkbox" name="Bluetooth">Bluetooth<br>
+                <input type="checkbox" name="Car_Kit">Car Kit<br>
+                <input type="checkbox" name="Remote_central_locking">Remote Central Locking<br>
+                <input type="checkbox" name="Climate_control">Climate Control<br>
+                <input type="checkbox" name="Ambient_lights">Ambient Light<br>
+              </div>
+              <div class="form-group">
+                <input type="file" class="form-control" name="cimage">
+              </div>
+              <div class="form-group text-center">
+                <input type="submit" value="Add Car" class="btn btn-primary py-3 px-5 rounded-pill shadow">
+            </div>
+            </form>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+	
+
+   
+    
+  </body>
+</html>
+{% endblock %}
